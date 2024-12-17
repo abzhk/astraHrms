@@ -28,7 +28,7 @@ app.use(
   })
 );
 
-app.get('/api/astra-hrms-api', (req, res) => {
+app.get('/api/', (req, res) => {
   return res.status(200).json({ message: "Hi from backend" });
 });
 
