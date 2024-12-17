@@ -3,14 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
-import routes from "./routes/routes.js";
-import { errorHandler, routeNotFound } from "./middlewares/errorMiddlewaves.js";
-import chalk from "chalk";
-
-import { dbConnection } from "./utils/index.js";
+import routes from "../routes/routes.js";
+import { errorHandler, routeNotFound } from "../middlewares/errorMiddlewaves.js";
+import { dbConnection } from "../utils/index.js";
 
 dotenv.config();
-
 dbConnection();
 
 const app = express();
@@ -23,17 +20,18 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  return res.status(200).json({ message: "Hi from backend" });
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan("dev"));
+
+app.get("/", (req, res) => {
+  return res.status(200).json({ message: "Hi from backend" });
+});
+
 app.use("/api", routes);
 app.use(routeNotFound);
 app.use(errorHandler);
 
-// Export the app for Vercel
+// Export for Vercel
 export default app;
