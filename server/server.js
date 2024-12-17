@@ -46,3 +46,5 @@ app.use(errorHandler);
 app.listen(PORT, () =>
   console.log(chalk.green.bold.bgCyan`Server listening on ${PORT}`)
 );
+
+export default app
