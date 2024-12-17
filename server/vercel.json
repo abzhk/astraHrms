@@ -8,7 +8,7 @@
     ],
     "routes": [
       {
-        "src": "/api/server.js",
+        "src": "/api/astra-hrms-api",
         "dest": "server.js"
       }
     ],
