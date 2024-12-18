@@ -7,7 +7,7 @@ import assignmentRoute from './assignmentRoute.js'
 
 const router = express.Router();
 
-router.use("/api/user", userRoutes);
+router.use("/user", userRoutes);
 router.use("/project",  projectRoute );
 router.use("/demo",  studentRoute );
 router.use ('/assign',assignmentRoute);
