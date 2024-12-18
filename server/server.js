@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  return res.status(200).json({ message: "Hi from backend" });
+  return res.status(200).json({ message: "WELCOME backend" });
 });
 
 app.use("/api", routes);
