@@ -31,9 +31,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", routes);
-// app.use((req,res)=>{
-//   res.status(404).send('route not found')
-// })
+app.use((req,res)=>{
+  res.status(404).send('route not found')
+})
 
 app.use(routeNotFound);
 app.use(errorHandler);
