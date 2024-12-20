@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", routes);
+
 app.use((req,res)=>{
   res.status(404).send('route not found')
 })
@@ -38,7 +39,6 @@ app.use((req,res)=>{
 app.use(routeNotFound);
 app.use(errorHandler);
 
-// app.listen(8080)
 
 // Export for Vercel
 export default app;
