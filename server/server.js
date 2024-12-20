@@ -38,7 +38,7 @@ app.use("/api", routes);
 app.use(routeNotFound);
 app.use(errorHandler);
 
-app.listen(8080)
+// app.listen(8080)
 
 // Export for Vercel
 export default app;
